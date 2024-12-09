@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekolojik Kredi Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>♻️ Ekolojik Kredi</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('kayit-form')">Kayıt Ol</a></li>
+                <li><a href="#" onclick="showPage('veri-girisi')">Veri Girişi</a></li>
+                <li><a href="#" onclick="showPage('veri-goruntule')">Veri Görüntüle</a></li>
+                <li><a href="#" onclick="showPage('hazirlayanlar')">Hazırlayanlar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>İşlemler</h2>
+            <ul>
+                <li><a href="#" onclick="showPage('kayit-form')">Kayıt Ol</a></li>
+                <li><a href="#" onclick="showPage('veri-girisi')">Veri Girişi</a></li>
+                <li><a href="#" onclick="showPage('veri-goruntule')">Veri Görüntüle</a></li>
+                <li><a href="#" onclick="showPage('hazirlayanlar')">Hazırlayanlar</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Kayıt Ol Formu -->
+            <section id="kayit-form" style="display:none;">
+                <h2>Kaydınızı Yapın</h2>
+                <form id="kayit-form">
+                    <label for="kayit-turu">Kayıt Türü:</label>
+                    <select id="kayit-turu">
+                        <option value="ogrenci">Öğrenci Kaydı</option>
+                        <option value="okul">Okul Kaydı</option>
+                    </select>
+                    <div id="ogrenci-kayit" style="display:none;">
+                        <h3>Öğrenci Kaydı</h3>
+                        <label for="ogrenci-ad">Ad:</label>
+                        <input type="text" id="ogrenci-ad" required>
+                        <label for="ogrenci-soyad">Soyad:</label>
+                        <input type="text" id="ogrenci-soyad" required>
+                        <label for="ogrenci-no">Öğrenci Numarası:</label>
+                        <input type="text" id="ogrenci-no" required>
+                        <button type="submit">Kaydet</button>
+                    </div>
+                    <div id="okul-kayit" style="display:none;">
+                        <h3>Okul Kaydı</h3>
+                        <label for="okul-ad">Okul Adı:</label>
+                        <input type="text" id="okul-ad" required>
+                        <button type="submit">Kaydet</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Veri Girişi -->
+            <section id="veri-girisi" style="display:none;">
+                <h2>Atık Girişi</h2>
+                <form id="atik-girisi">
+                    <label for="atik-turu">Atık Türü:</label>
+                    <select id="atik-turu">
+                        <option value="pil">Pil</option>
+                        <option value="kagit">Kağıt</option>
+                        <option value="plastik">Plastik</option>
+                        <option value="cam">Cam</option>
+                        <option value="metal">Metal</option>
+                    </select>
+                    <label for="miktar">Miktar (kg):</label>
+                    <input type="number" id="miktar" required>
+                    <label for="kayit-yapan">Kaydeden Kişi:</label>
+                    <input type="text" id="kayit-yapan" required>
+                    <label for="ogrenci-numara">Öğrenci Numarası:</label>
+                    <input type="text" id="ogrenci-numara" required>
+                    <button type="submit">Kaydet</button>
+                </form>
+            </section>
+
+            <!-- Veri Görüntüle -->
+            <section id="veri-goruntule" style="display:none;">
+                <h2>Veri Görüntüleme</h2>
+                <form id="veri-goruntule-form">
+                    <label for="okul-no">Öğrenci Numarası:</label>
+                    <input type="text" id="okul-no" required>
+                    <button type="button" onclick="veriGoruntule()">Verileri Görüntüle</button>
+                </form>
+                <table id="atikkayitlari">
+                    <thead>
+                        <tr>
+                            <th>Tarih</th>
+                            <th>Atık Türü</th>
+                            <th>Miktar (kg)</th>
+                            <th>Puan</th>
+                            <th>Kaydeden</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- Hazırlayanlar -->
+            <section id="hazirlayanlar" style="display:none;">
+                <h2>Hazırlayanlar</h2>
+                <p><strong>Danışman Öğretmen:</strong> Osman Onuk</p>
+                <p><strong>Öğrenciler:</strong> Muhammedcan Arslanparçası, Bilal Yiğit Tezcan, Yağız Efe Yılmaz</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
